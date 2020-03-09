@@ -8,8 +8,8 @@ class Show < ActiveRecord::Base
    array_full_name =self.actors.map {|actor| actor.name}
    array_of_shows = self.shows.map {|show| show.name}
    show = array_full_name.concat array_of_shows
-    shows << show.join(" - ")
-    shows
+    array << show.join(" - ")
+    array
    
   end 
 end
