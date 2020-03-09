@@ -5,8 +5,8 @@ class Show < ActiveRecord::Base
   
   def actors_list
    array=[]
-   array_full_name =self..map {|character| character.name}
-   array_of_shows = self.show.map {|shows| shows.name}
+   array_full_name =self.actors.map {|actor| actor.name}
+   array_of_shows = self.shows.map {|show| show.name}
    show = array_full_name.concat array_of_shows
     shows << show.join(" - ")
     shows
